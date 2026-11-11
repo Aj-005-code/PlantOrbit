@@ -1,0 +1,356 @@
+{
+  "version": 1,
+  "author": "PlantOrbit Reference Simulation",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-s3-devkitc-1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-mpu6050",
+      "id": "imu1",
+      "top": -150,
+      "left": -180,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sr04",
+      "top": -170,
+      "left": 40,
+      "attrs": {
+        "distance": "18"
+      }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "drv_left",
+      "top": 20,
+      "left": 210,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "mot_left",
+      "top": -40,
+      "left": 340,
+      "attrs": {
+        "size": "17"
+      }
+    },
+    {
+      "type": "wokwi-a4988",
+      "id": "drv_right",
+      "top": 170,
+      "left": 210,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "mot_right",
+      "top": 130,
+      "left": 340,
+      "attrs": {
+        "size": "17"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_illum",
+      "top": 90,
+      "left": -150,
+      "attrs": {
+        "color": "white",
+        "label": "High-CRI LED Ring (GPIO14)"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_led",
+      "top": 140,
+      "left": -150,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_estop",
+      "top": 210,
+      "left": -160,
+      "attrs": {
+        "color": "red",
+        "label": "E-STOP (GPIO1)",
+        "bounce": "0",
+        "key": "e"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:TX",
+      "$serialMonitor:RX",
+      "",
+      []
+    ],
+    [
+      "esp:RX",
+      "$serialMonitor:TX",
+      "",
+      []
+    ],
+    [
+      "imu1:VCC",
+      "esp:3V3.1",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "imu1:GND",
+      "esp:GND.1",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "imu1:SDA",
+      "esp:8",
+      "blue",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "imu1:SCL",
+      "esp:9",
+      "yellow",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "sr04:VCC",
+      "esp:5V",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "sr04:GND",
+      "esp:GND.1",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "sr04:ECHO",
+      "esp:18",
+      "purple",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "sr04:TRIG",
+      "esp:21",
+      "orange",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "drv_left:VDD",
+      "esp:3V3.1",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "drv_left:GND",
+      "esp:GND.2",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "drv_left:RESET",
+      "drv_left:SLEEP",
+      "gray",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "drv_left:STEP",
+      "esp:4",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "drv_left:DIR",
+      "esp:5",
+      "cyan",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "drv_left:1B",
+      "mot_left:B-",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "drv_left:1A",
+      "mot_left:B+",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "drv_left:2A",
+      "mot_left:A+",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "drv_left:2B",
+      "mot_left:A-",
+      "blue",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "drv_right:VDD",
+      "esp:3V3.1",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "drv_right:GND",
+      "esp:GND.2",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "drv_right:RESET",
+      "drv_right:SLEEP",
+      "gray",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "drv_right:STEP",
+      "esp:6",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "drv_right:DIR",
+      "esp:7",
+      "cyan",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "drv_right:1B",
+      "mot_right:B-",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "drv_right:1A",
+      "mot_right:B+",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "drv_right:2A",
+      "mot_right:A+",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "drv_right:2B",
+      "mot_right:A-",
+      "blue",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "esp:14",
+      "r_led:1",
+      "white",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "r_led:2",
+      "led_illum:A",
+      "white",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "led_illum:C",
+      "esp:GND.1",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "btn_estop:1.r",
+      "esp:1",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "btn_estop:2.r",
+      "esp:GND.1",
+      "black",
+      [
+        "v0"
+      ]
+    ]
+  ],
+  "dependencies": {}
+}
