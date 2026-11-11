@@ -1,0 +1,11 @@
+sweep,value,mode,mean_pos_err,p95_pos_err
+gyro_bias_sigma_dps,0.01,dead_reckoning,6.39305536476753,13.222372848835628
+gyro_bias_sigma_dps,0.01,marker_corrected,1.6477318981552362,3.255180508054006
+gyro_bias_sigma_dps,0.03,dead_reckoning,7.663070205041564,17.165932864809726
+gyro_bias_sigma_dps,0.03,marker_corrected,1.6729093304877656,3.3037270788198994
+gyro_bias_sigma_dps,0.1,dead_reckoning,15.477812222513172,45.900633361850936
+gyro_bias_sigma_dps,0.1,marker_corrected,1.6203899239655273,3.239785657302931
+marker_pos_sigma_mm,1.0,marker_corrected,1.1058813143424477,2.1475160424697206
+marker_pos_sigma_mm,1.5,marker_corrected,1.649385187697148,3.211357731383916
+marker_pos_sigma_mm,3.0,marker_corrected,3.468392234492751,6.8639553793215855
+marker_pos_sigma_mm,5.0,marker_corrected,5.53656915942975,10.924888633819817
