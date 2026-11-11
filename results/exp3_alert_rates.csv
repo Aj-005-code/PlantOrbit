@@ -1,0 +1,16 @@
+mode,scenario,role,alert_rate,ci_lo,ci_hi,n
+dead_reckoning,growth,negative,0.05,0.013820377146101098,0.165041708179252,40
+dead_reckoning,leaf_drop,positive,0.9,0.7694792561952611,0.9604211124044252,40
+dead_reckoning,none,negative,0.45,0.30705075280944694,0.6017117011155924,40
+dead_reckoning,wilting,positive,1.0,0.9123754607496077,1.0,40
+dead_reckoning,yellowing,positive,1.0,0.9123754607496077,1.0,40
+ideal,growth,negative,0.0,0.0,0.08762453925039232,40
+ideal,leaf_drop,positive,0.85,0.7092737396097997,0.9293890829149256,40
+ideal,none,negative,0.0,0.0,0.08762453925039232,40
+ideal,wilting,positive,1.0,0.9123754607496077,1.0,40
+ideal,yellowing,positive,1.0,0.9123754607496077,1.0,40
+marker_corrected,growth,negative,0.0,0.0,0.08762453925039232,40
+marker_corrected,leaf_drop,positive,0.925,0.8013546984090248,0.9741644432281419,40
+marker_corrected,none,negative,0.0,0.0,0.08762453925039232,40
+marker_corrected,wilting,positive,1.0,0.9123754607496077,1.0,40
+marker_corrected,yellowing,positive,1.0,0.9123754607496077,1.0,40
